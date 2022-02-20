@@ -13,8 +13,6 @@ const data = {} // Para memoizar los datos cargados
 async function setup() {
   noCanvas();
   // UN MUñEQUITO DE TRANSICIÓN MENU
-
-  //await loadData();
   params();
 
   select('#about-btn').mouseClicked(()=>{
@@ -45,7 +43,8 @@ function params() {
   } else if (params.p === "lo_ultimo") {
     createHTMLBlock(urls.showcase);
   } else {
-    createFullBlock(urls.main, urls.main_gallery);
+    createHTMLBlock(urls.showcase);
+    // createFullBlock(urls.main, urls.main_gallery);
   }
 }
 
@@ -150,3 +149,9 @@ async function createHTMLBlock(dataPath) {
   createElement('h1', mainData['Título']).parent(block).class('block-title');
   createDiv(mainData['Contenido']).parent(block).class('H-block');
 }
+
+
+/*
+Para cargar imgs de google drive
+https://drive.google.com/uc?id=IDAQUI&export=download
+*/
